@@ -14,7 +14,7 @@ pipeline {
               scannerHome = tool 'sonarscanner'
             }
             withSonarQubeEnv('sonarqube') {
-              bat "\"${scannerHome}\\bin\\sonar-scanner.bat\" -Dsonar.projectKey=pkey"
+              bat "\"${scannerHome}\\bin\\sonar-scanner.bat\" -Dsonar.projectKey=pkey -Dsonar.java.binaries=./target"
             }
             jacoco()
           }
